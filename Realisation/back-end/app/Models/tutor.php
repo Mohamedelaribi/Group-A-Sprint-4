@@ -5,7 +5,7 @@ use App\Models\Brief;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class tutor extends Model
+class Tutor extends Model
 {
     use HasFactory;
 
