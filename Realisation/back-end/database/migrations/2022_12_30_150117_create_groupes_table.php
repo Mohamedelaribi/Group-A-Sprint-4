@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreign('tutor_id')->references('id')->on('tutors')
             ->onUpdate('cascade');
             $table->foreign('trainingyears_id')->references('id')
-            ->on('trainingyears');
+            ->on('training_years');
             $table->timestamps();
         });
     }

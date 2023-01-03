@@ -20,7 +20,7 @@ class groupeFactory extends Factory
         return [
             'name' =>$this->faker->name(),
             'logo' =>$this->faker->imageURL(true, 'Faker',true),
-            'trainingyears_id' =>$this->faker->rendomElement($trainingYear),
+            'trainingyears_id' =>$this->faker->randomElement($trainingYear),
             'tutor_id' =>$this->faker->randomElement($tutor),
 
         ];

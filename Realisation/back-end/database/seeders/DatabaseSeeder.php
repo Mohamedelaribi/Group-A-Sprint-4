@@ -5,7 +5,7 @@ use App\Models\TrainingYear;
 use App\Models\Apprentice;
 use App\Models\Brief;
 use App\Models\Task;
-use App\Models\Goupe;
+use App\Models\Groupe;
 use App\Models\Tutor;
 use App\Models\ApprenticeTask;
 use App\Models\ApprenticeBrief;
@@ -28,11 +28,11 @@ class DatabaseSeeder extends Seeder
         TrainingYear::factory(1)->create();
         Apprentice::factory(20)->create();
         Brief::factory(10)->create();
+        Tutor::factory(2)->create();
         Groupe::factory(5)->create();
-        Task::factory(3)->create();
-        Tutor::factory(4)->create();
+        Task::factory(10)->create();
         ApprenticeTask::factory(20)->create();
-        ApprenticeGroupe::factory(4)->create();
+        ApprenticeGroupe::factory(3)->create();
         ApprenticeBrief::factory(4)->create();
 
     }

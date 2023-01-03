@@ -20,7 +20,7 @@ class ApprenticeTaskFactory extends Factory
         $task = Task::all()->pluck('id')->toArray();
         return [
             'apprentice_id'=>$this->faker->randomElement($apprentice),
-            'task_id'=>$this->faker->randomElement($Task),
+            'task_id'=>$this->faker->randomElement($task),
             'state' =>$this->faker->randomElement(['NULL','1','0']),
             'startDate'=>$this->faker->date(),
             'endDate'=>$this->faker->date(),

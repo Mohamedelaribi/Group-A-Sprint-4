@@ -18,7 +18,7 @@ class ApprenticeFactory extends Factory
             "lastName" => $this->faker->lastName(),
             "email" => $this->faker->unique()->safeEmail(),
             "phoneNumber" => $this->faker->phoneNumber(),
-            "address" => $this->faker->streetAddress(),
+            "adresse" => $this->faker->streetAddress(),
             "imageURL" => $this->faker->imageURL(),
         ];
     }
