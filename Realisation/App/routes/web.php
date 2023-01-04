@@ -1,7 +1,12 @@
 <?php
 
+<<<<<<< HEAD
 use App\Http\Controllers\languageController;
 use App\Http\Controllers\ApprenticeController;
+=======
+use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\PromotionsController;
+>>>>>>> 6b1b305b87be8ad11620f44974fe740ac6b2df9e
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +32,7 @@ Route::get('/', function () {
     });
     // crud promotion ressource
 
+<<<<<<< HEAD
     Route::resource('apprentices', ApprenticeController::class);
 // });
 
@@ -37,6 +43,16 @@ Route::get('lang/change',[languageController::class, 'change'])->name('changelan
 
 
 
+=======
+    Route::resource('apprentices', PromotionsController::class);
+// });
+
+
+
+
+
+ 
+>>>>>>> 6b1b305b87be8ad11620f44974fe740ac6b2df9e
 // Crud promotion
 // Route::get('promotions/index', [PromotionController::class,'select'] );
 // Route::get('/add', [PromotionController::class,'Add'] );
@@ -44,4 +60,8 @@ Route::get('lang/change',[languageController::class, 'change'])->name('changelan
 // Route::get('/delete/{id}', [PromotionController::class,'deleteTask'] );
 // Route::get('/updatetask/{id}', [PromotionController::class,'updatetask'] );
 // Route::post('/actionupdate/{id}', [PromotionController::class,'actionupdate'] );
+<<<<<<< HEAD
 // Route::get('/filtrer', [PromotionController::class,'filtrer'] );
+=======
+// Route::get('/filtrer', [PromotionController::class,'filtrer'] );
+>>>>>>> 6b1b305b87be8ad11620f44974fe740ac6b2df9e
