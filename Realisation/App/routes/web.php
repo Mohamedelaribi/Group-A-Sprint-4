@@ -20,15 +20,15 @@ Route::get('/', function () {
 });
 
 
-Route::prefix('admin')->middleware('auth')->group(function () {
+// Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('/home', function () {
         return view('home');
     });
     // crud promotion ressource
 
-    Route::resource('promotions', PromotionsController::class);
-});
+    Route::resource('apprentices', PromotionsController::class);
+// });
 
 
 

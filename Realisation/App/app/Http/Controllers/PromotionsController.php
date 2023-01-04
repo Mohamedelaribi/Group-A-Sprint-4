@@ -2,104 +2,68 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Promotion;
+use App\Models\Apprentice;
 use Illuminate\Http\Request;
+use DB;
 
 class PromotionsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function index()
     {
-        //
-        $promotions = Promotion::all();
-        return view('promotions.index', compact('promotions'));
+        $apprentices = DB::table('apprentices')->paginate(5);
+        return view('apprentices.index', compact('apprentices'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create(Request $request)
     {
-        //
-        return view('promotions.create');
+        
+        return view('apprentices.create');
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-        $promotion = new Promotion();
-        $promotion->name = $request->name;
-        $promotion->save();
-        return redirect()->route('promotions.index');
+        
+        $apprentices = new Apprentice();
+        $apprentices->name = $request->name;
+        $apprentices->save();
+        return redirect()->route('apprentices.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
-        $promotion = Promotion::where('id', $id)->first();
-        return view('promotions.edit', compact('promotion'));
+        
+        $apprentice = Apprentice::where('id', $id)->first();
+        return view('apprentices.edit', compact('apprentice'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
 
 
     public function update(Request $request, $id)
     {
-        //
-        $promotion = Promotion::where('id', $id)->first();
-        $promotion->name = $request->name;
-        $promotion->save();
-        return redirect()->route('promotions.index');
+        
+        $apprentice = Apprentice::where('id', $id)->first();
+        $apprentice->firstName = $request->firstName;
+        $apprentice->lastName = $request->lastName;
+        $apprentice->email = $request->email;
+        $apprentice->phoneNumber = $request->phoneNumber;
+        $apprentice->adresse = $request->adresse;
+        $apprentice->save();
+        return redirect()->route('apprentices.index');
     }
   
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
     public function destroy($id)
     {
-        //
-        $promotion = Promotion::find($id); 
-        $promotion->destroy();
-        return redirect()->route('promotions.index');
+        
+        $apprentice = Apprentice::find($id); 
+        $apprentice->delete();
+        return redirect()->route('apprentices.index');
     }
 }
