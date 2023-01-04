@@ -3,11 +3,11 @@
 @extends('adminlte::page')
 
 @section('plugins.Datatables', true)
-    
+
 
 
 @section('title')
- Welcome admin    
+ Welcome admin
 @endsection
 
 @section('content_header')
@@ -21,51 +21,52 @@
                 <div class="card my-5">
                     <div class="card-header">
                         <div class="text-center font-weight-bold text-uppercase">
-                        Modifier le nom de l'apprentice
+                        {{ __('message.EditApprenticeInformations') }}
                          </div>
-                     </div>  
+                     </div>
                     <div class="card-body">
                        <form method="post" action="{{ route('apprentices.update', $apprentice->id) }}" class="mt-3">
                         @method('PUT')
                         @csrf
-
                             <div class="form-group mb-3">
-                                <label for="PromotionName">Prénom de l'apprentice </label>
-                                <input type="text" class="form-control" name="firstName" value="{{ $apprentice->firstName }}" id="">
+                                <label for="ApprenticefirstName">{{ __('message.firstNameApprentice') }} </label>
+                                <input type="text" class="form-control" name="newFirstName" value="{{ $apprentice->firstName }}" id="">
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="PromotionName">Nom de l'apprentice </label>
-                                <input type="text" class="form-control" name="lastName" value="{{ $apprentice->lastName }}" id="">
+                                <label for="ApprenticefirstName">{{ __('message.lastNameApprentice') }} </label>
+                                <input type="text" class="form-control" name="newLastName" value="{{ $apprentice->lastName }}" id="">
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="PromotionName">email de l'apprentice </label>
-                                <input type="text" class="form-control" name="email" value="{{ $apprentice->email }}" id="">
+                                <label for="ApprenticefirstName">{{ __('message.emailApprentice') }} </label>
+                                <input type="text" class="form-control" name="newEmail" value="{{ $apprentice->email }}" id="">
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="PromotionName">téléphone de l'apprentice </label>
-                                <input type="text" class="form-control" name="phoneNumber" value="{{ $apprentice->phoneNumber }}" id="">
+                                <label for="ApprenticefirstName">{{ __('message.phoneNumber') }} </label>
+                                <input type="text" class="form-control" name="newPhoneNumber" value="{{ $apprentice->phoneNumber }}" id="">
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="PromotionName">adresse de l'apprentice </label>
-                                <input type="text" class="form-control" name="adresse" value="{{ $apprentice->adresse }}" id="">
-                            </div>                        
-                            
+                                <label for="ApprenticefirstName">{{ __('message.address') }} </label>
+                                <input type="text" class="form-control" name="newAddress" value="{{ $apprentice->adresse }}" id="">
+                            </div>
+
+
+
                             <div class="form-group mb-6 text-center">
-                                <button type="submit" class="col-md-3 btn btn-primary">Submit</button>
+                                <button type="submit" class="col-md-3 btn btn-primary">{{ __('message.submit') }}</button>
                             </div>
                          </form>
                     </div>
                 </div>
-                
-        
+
+
             </div>
 
         </div>
-   
+
 </div>
-    
-@endsection 
+
+@endsection
