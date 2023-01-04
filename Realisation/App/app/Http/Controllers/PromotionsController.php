@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Promotion;
 use Illuminate\Http\Request;
+use DB;
 
 class PromotionsController extends Controller
 {
@@ -15,7 +16,7 @@ class PromotionsController extends Controller
     public function index()
     {
         //
-        $promotions = Promotion::all();
+        $promotions = Db::table('promotions')->paginate(5);
         return view('promotions.index', compact('promotions'));
     }
 

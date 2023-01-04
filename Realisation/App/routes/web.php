@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\languageController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\PromotionsController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('promotions', PromotionsController::class);
 });
 
+
+Route::get('lang/change',[languageController::class, 'change'])->name('changelang');
 
 
 
