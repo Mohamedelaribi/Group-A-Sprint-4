@@ -1,4 +1,4 @@
-@extends('layout.app')
+{{-- @extends('layout.app')
 
 @section('title')
  Welcome admin    
@@ -9,7 +9,7 @@
 
     <div class="row my-5">
         <div class="col-md-6 mx-auto">
-            <div class="card">
+            {{-- <div class="card"> --}}
                 <div class="card-header">
                     <h2>Welcome Back</h2>
                 </div>
@@ -32,4 +32,4 @@
     </div>
 </div>
     
-@endsection
+@endsection --}}

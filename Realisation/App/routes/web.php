@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\languageController;
-use App\Http\Controllers\ApprenticeController;
+use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\PromotionsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,16 +27,16 @@ Route::get('/', function () {
     });
     // crud promotion ressource
 
-    Route::resource('apprentices', ApprenticeController::class);
+    Route::resource('apprentices', PromotionsController::class);
 // });
 
 
-Route::get('lang/change',[languageController::class, 'change'])->name('changelang');
 
+Route::get('/file-import',[ApprenticeController::class,'importView'])->name('import-view');
+Route::post('/import',[ApprenticeController::class,'import'])->name('import');
+Route::get('/export-users',[ApprenticeController::class,'exportApprentice'])->name('export-apprentice');
 
-
-
-
+ 
 // Crud promotion
 // Route::get('promotions/index', [PromotionController::class,'select'] );
 // Route::get('/add', [PromotionController::class,'Add'] );

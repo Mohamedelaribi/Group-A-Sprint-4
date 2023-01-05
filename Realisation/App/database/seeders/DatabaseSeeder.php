@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
         \App\Models\Promotion::factory(10)->create();
         \App\Models\user::factory(1)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]);
     }
 }
