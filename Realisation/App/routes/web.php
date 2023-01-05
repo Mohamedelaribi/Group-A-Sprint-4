@@ -35,7 +35,9 @@ Route::get('lang/change',[languageController::class, 'change'])->name('changelan
 
 
 
-
+Route::get('/file-import',[ApprenticeController::class,'importView'])->name('import-view');
+Route::post('/import',[ApprenticeController::class,'import'])->name('import');
+Route::get('/export-users',[ApprenticeController::class,'exportApprentice'])->name('export-apprentice');
 
 // Crud promotion
 // Route::get('promotions/index', [PromotionController::class,'select'] );
