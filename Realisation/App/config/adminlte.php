@@ -306,12 +306,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'list des promotions',
-                    'url'  => 'admin/promotions',
+                    'url'  => 'apprentices',
                     'icon' => 'fas fa-fw fa-list',
                 ],
                 [
                     'text' => 'créer',
-                    'url'  => 'admin/promotions/create',
+                    'url'  => 'apprentices/create',
                     'icon' => 'fas fa-fw fa-user-plus',
                 ],
 

@@ -12,7 +12,7 @@ class ApprenticeController extends Controller
     public function index()
     {
 
-        $apprentices = Db::table('apprentices')->paginate(5);
+        $apprentices = Apprentice::paginate(5);
         return view('apprentices.index', compact('apprentices'));
     }
 
@@ -27,7 +27,12 @@ class ApprenticeController extends Controller
     {
 
         $apprentice = new Apprentice();
-        $apprentice->name = $request->name;
+        $apprentice->firstName = $request->firstName;
+        $apprentice->lastName = $request->lastName;
+        $apprentice->email = $request->email;
+        $apprentice->phoneNumber = $request->phoneNumber;
+        $apprentice->adresse = $request->address;
+        $apprentice->imageURL = $request->imageURL;
         $apprentice->save();
         return redirect()->route('apprentices.index');
     }
