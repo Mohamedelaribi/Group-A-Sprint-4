@@ -33,11 +33,11 @@ Route::get('/', function () {
 
 Route::get('lang/change',[languageController::class, 'change'])->name('changelang');
 
+Route::get('/file-import',[UserController::class,'importView'])->name('import-view');
+Route::post('/import',[UserController::class,'import'])->name('import');
+Route::get('/export-users',[UserController::class,'exportUsers'])->name('export-users');
 
 
-Route::get('/file-import',[ApprenticeController::class,'importView'])->name('import-view');
-Route::post('/import',[ApprenticeController::class,'import'])->name('import');
-Route::get('/export-users',[ApprenticeController::class,'exportApprentice'])->name('export-apprentice');
 
 // Crud promotion
 // Route::get('promotions/index', [PromotionController::class,'select'] );

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 use App\Models\Tutor;
 
-class TutorsFactory extends Factory
+class TutorFactory extends Factory
 {
 
     public function definition()
@@ -15,7 +15,7 @@ class TutorsFactory extends Factory
             'firstName' => $this->faker->firstName(),
             'lastName' => $this->faker->lastName(),
             'email' => $this->faker->email(),
-            'imageUrl' => $this->faker->imageUrl(),
+            'imageUrl' => $this->faker->imageUrl(true, 'faker',true),
         ];
     }
 }

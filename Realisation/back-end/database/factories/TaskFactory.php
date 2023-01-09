@@ -7,19 +7,16 @@ use App\Models\Task;
 use App\Models\Brief;
 class TaskFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+
     public function definition()
     {
         $brief = Brief::all()->pluck('id')->toArray();
         return [
             'name' =>$this->faker->name(),
-            'description' =>$this->faker->taxt(),
-            'duration' =>$this->faker->randomElement(1),
+            'description' =>$this->faker->text(),          
             'brief_id' =>$this->faker->randomElement($brief),
+            'duration' =>$this->faker->randomNumber(1),
+  
         ];
     }
 }

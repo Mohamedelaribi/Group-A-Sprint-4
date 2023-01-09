@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Apprentice;
 use Illuminate\Http\Request;
-use App\Models\ImportApprentice;
 use DB;
 
 class ApprenticeController extends Controller
@@ -28,7 +27,12 @@ class ApprenticeController extends Controller
     {
 
         $apprentice = new Apprentice();
-        $apprentice->name = $request->name;
+        $apprentice->firstName = $request->firstName;
+        $apprentice->lastName = $request->lastName;
+        $apprentice->email = $request->email;
+        $apprentice->phoneNumber = $request->phoneNumber;
+        $apprentice->adresse = $request->address;
+        $apprentice->imageURL = $request->imageURL;
         $apprentice->save();
         return redirect()->route('apprentices.index');
     }
@@ -68,19 +72,4 @@ class ApprenticeController extends Controller
         $apprentice->delete();
         return redirect()->route('apprentices.index');
     }
-
-    public function importView(Request $request){
-
-        return view('importfile');
-    } 
-
-    public function import(Resquet $request){
-        Excel::import(new ImportApprentice, $request->file('file')->store('files'));
-        return redirect()->back();
-    }
-
-
-    public function exportApprentice(Request $request){
-        return Excel::download(new ExportApprentice,'apprentices.xlsx');
-}
 }

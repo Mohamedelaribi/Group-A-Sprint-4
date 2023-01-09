@@ -44,6 +44,7 @@ justify-content: space-between;">
 </script>
 
 <div class="container">
+    <input type="search" >
     <div class="row">
         <div class="col-md-10 mx-auto" >
                 <div class="card my-5">
@@ -90,6 +91,10 @@ justify-content: space-between;">
                         <div class="row">{{ $apprentices->links() }}</div>
 
                     </div>
+                    <div class="importAndExport">
+                        button.
+                    </div>
+
                 </div>
 
 

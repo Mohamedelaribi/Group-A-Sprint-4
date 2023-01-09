@@ -15,5 +15,6 @@ return [
     'phoneNumber'=>'PHONE NUMBER',
     'address'=>'ADDRESS',
     'action'=>'Action',
+    'hello'=>'Hellom',
     'submit'=>'Submit'
 ];
