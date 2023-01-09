@@ -8,11 +8,7 @@ use App\Models\Tutor;
 
 class TutorsFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+
     public function definition()
     {
         return [
