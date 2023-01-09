@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Apprentice;
 use Illuminate\Http\Request;
+use App\Exports\ExportApprentice;
+use App\import\ImportApprentice;
+use Maatwebsite\Excel\Facades\Excel;
+
 use DB;
 
 class ApprenticeController extends Controller
@@ -71,5 +75,18 @@ class ApprenticeController extends Controller
         $apprentice = Apprentice::find($id);
         $apprentice->delete();
         return redirect()->route('apprentices.index');
+    }
+
+    // public function importView(){
+    //     return view('apprentices.import');
+    // }
+
+    public function import(Request $request){
+        Excel::import(new ImportApprentice, $request->importFile);
+        return redirect()->route('apprentices.index');
+    }
+
+    public function exportApprentices(Request $request){
+        return Excel::download(new ExportApprentice, 'apprentices.xlsx');
     }
 }
