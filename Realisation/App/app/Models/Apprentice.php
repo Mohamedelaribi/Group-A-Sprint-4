@@ -10,6 +10,16 @@ class Apprentice extends Model
 {
     use HasFactory;
 
+
+    protected $fillable = [
+        'firstName',
+        'lastName',
+        'email',
+        'phoneNumber',
+        'adresse',
+        'imageURL'
+    ];
+
     public function task(){
         return $this->hasMany(Task::class);
     }

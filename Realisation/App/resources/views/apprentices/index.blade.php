@@ -99,7 +99,7 @@ justify-content: space-between;">
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     import
   </button>
-  
+
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -109,6 +109,7 @@ justify-content: space-between;">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">Close</button>
         </div>
         <form action="{{route('import')}}" method="post" enctype="multipart/form-data">
+            @csrf
         <div class="modal-body">
             <input type="file" name="importFile" id="">
         </div>
@@ -118,7 +119,7 @@ justify-content: space-between;">
         </div>
             </form>
       </div>
-      
+
     </div>
   </div>
 

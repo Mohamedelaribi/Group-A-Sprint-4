@@ -20,7 +20,7 @@ class ImportApprentice implements ToModel
             'email' => $row[2],
             'phoneNumber' => $row[3],
             'adresse' => $row[4],
-            'imageURL' => $row[5],
+            'imageURL' => $row[5]
         ]);
     }
 }

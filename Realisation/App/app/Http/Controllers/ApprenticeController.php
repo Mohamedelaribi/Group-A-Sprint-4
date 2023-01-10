@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Apprentice;
 use Illuminate\Http\Request;
 use App\Exports\ExportApprentice;
-use App\import\ImportApprentice;
+use App\Imports\ImportApprentice;
 use Maatwebsite\Excel\Facades\Excel;
 
 use DB;
