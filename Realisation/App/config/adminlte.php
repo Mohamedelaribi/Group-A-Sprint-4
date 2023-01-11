@@ -301,11 +301,28 @@ return [
             'topnav_right' => true,
         ],
         [
-            'text'    => 'Promotions',
-            'icon'    => 'fas fa-fw fa-arrow-alt-circle-right',
+            'text'    => 'Groupes',
+            'icon'    => 'fas  fa-users',
             'submenu' => [
                 [
-                    'text' => 'list des promotions',
+                    'text' => 'list des groups',
+                    'url'  => 'groups',
+                    'icon' => 'fas fa-fw fa-list',
+                ],
+                [
+                    'text' => 'créer un group',
+                    'url'  => 'groups/create',
+                    'icon' => 'fas  fa-plus',
+                ],
+
+            ],
+        ],
+        [
+            'text'    => 'Apprentices',
+            'icon'    => 'fas fa-user',
+            'submenu' => [
+                [
+                    'text' => 'list des apprantices',
                     'url'  => 'apprentices',
                     'icon' => 'fas fa-fw fa-list',
                 ],
@@ -317,7 +334,8 @@ return [
 
             ],
         ],
-       
+
+
     ],
 
     /*

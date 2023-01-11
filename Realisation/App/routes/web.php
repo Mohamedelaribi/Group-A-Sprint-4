@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\languageController;
 use App\Http\Controllers\ApprenticeController;
+use App\Http\Controllers\GroupController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,6 +20,7 @@ Route::get('/', function () {
     // crud promotion ressource
 
     Route::resource('apprentices', ApprenticeController::class);
+    Route::resource('groups', GroupController::class);
 // });
 
 

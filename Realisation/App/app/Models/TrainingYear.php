@@ -10,6 +10,6 @@ class TrainingYear extends Model
     use HasFactory;
 
     public function group(){
-        return $this->belongsTo(Groupe::class);
+        return $this->hasMany(Groupe::class);
     }
 }

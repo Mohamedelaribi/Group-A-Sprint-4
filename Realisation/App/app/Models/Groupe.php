@@ -11,6 +11,7 @@ class Groupe extends Model
     use HasFactory;
 
     public function trainingYears(){
+        
         return $this->belongsTo(TrainingYear::class);
     }
 
