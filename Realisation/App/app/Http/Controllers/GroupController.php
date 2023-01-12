@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Groupe;
+use App\Models\TrainingYear;
+use App\Models\Brief;
 
 use Illuminate\Http\Request;
 
@@ -10,16 +12,13 @@ class GroupController extends Controller
 
     public function index()
     {
-        $getAllGroups = Groupe::all();
-         $data = [];
-         foreach($getAllGroups as $getAllGroup){
-            $getAllGroup->trainingYears;
-            
-         }
-         $data[]=$getAllGroups;
-        // return view('groups.index', compact("data","getAllGroups"));
-        return $data;
+        $getAllGroup =Groupe::all();
+        // $getTraningYear = $getAllGroup->task;
+        foreach($getAllGroup as $groupe){
+            $groupe->trainingYear;
         }
+        return view('groups.index',compact('getAllGroup'));
+    }
     public function create()
     {
         //
@@ -55,7 +54,9 @@ class GroupController extends Controller
      */
     public function edit($id)
     {
-        //
+        $getAllGroup =Brief::find('2');
+        $getTraningYear = $getAllGroup->task;
+        dd($getAllGroup);
     }
 
     /**

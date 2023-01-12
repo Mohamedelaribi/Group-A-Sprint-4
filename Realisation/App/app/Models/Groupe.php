@@ -10,8 +10,8 @@ class Groupe extends Model
 {
     use HasFactory;
 
-    public function trainingYears(){
-        
+    public function trainingYear(){
+
         return $this->belongsTo(TrainingYear::class);
     }
 
