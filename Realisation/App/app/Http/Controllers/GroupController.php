@@ -11,10 +11,15 @@ class GroupController extends Controller
     public function index()
     {
         $getAllGroups = Groupe::all();
-        $TrainingYear = $getAllGroups->trainingYears;
-        return view('groups.index', compact('getAllGroups','TrainingYear'));
-    }
-
+         $data = [];
+         foreach($getAllGroups as $getAllGroup){
+            $getAllGroup->trainingYears;
+            
+         }
+         $data[]=$getAllGroups;
+        // return view('groups.index', compact("data","getAllGroups"));
+        return $data;
+        }
     public function create()
     {
         //

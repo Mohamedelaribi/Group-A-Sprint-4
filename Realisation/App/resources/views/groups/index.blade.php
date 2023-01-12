@@ -65,14 +65,14 @@ justify-content: space-between;">
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($getAllGroups as $group)
+                                @foreach ($data as $group)
 
                                 <tr>
-                                    <td>{{ $group->name }}</td>
-                                    @foreach ($TrainingYear as $item)
-
-                                    @endforeach
-                                    <td>{{ $item->trainingYear}}</td>
+                                    <td>{{ $group->id }}</td>
+                                    {{-- @foreach ($data as $item) --}}
+                                        
+                                    
+                                    {{-- @endforeach --}}
                                     <td class="d-flex justify-content-center align-items-center">
                                         <a href="{{ route('groups.edit', $group->id) }}" class="btn btn-sm btn-warning mr-2 ">
                                              <i class="fas fa-edit"></i>
